@@ -93,8 +93,8 @@ try:
     # Predicted Fair Value
     fig.add_trace(go.Scatter(
         x=pair_df['date'], y=pair_df['prediction'],
-        name="RF Fair Value",
-        line=dict(color='white', width=1, dash='dot')
+        name="Predicted Spread",
+        line=dict(color='orange', width=2, dash='dot')
     ))
 
     # Add Trading Markers (Triangles)
@@ -105,14 +105,14 @@ try:
         x=buys['date'], y=buys['target'],
         mode='markers',
         name='BUY Trigger',
-        marker=dict(color='green', size=12, symbol='triangle-up')
+        marker=dict(color='green', size=8, symbol='triangle-up')
     ))
 
     fig.add_trace(go.Scatter(
         x=sells['date'], y=sells['target'],
         mode='markers',
         name='SELL Trigger',
-        marker=dict(color='red', size=12, symbol='triangle-down')
+        marker=dict(color='red', size=8, symbol='triangle-down')
     ))
 
     fig.update_layout(
